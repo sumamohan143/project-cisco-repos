@@ -38,6 +38,11 @@ pipeline {
                 archiveArtifacts artifacts: 'result.html'
             }
         }
+        stage('Print Date') {
+            steps {
+                sh 'date'
+            }
+        }
     }
  
     post {
