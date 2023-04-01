@@ -38,7 +38,7 @@ pipeline {
                 archiveArtifacts artifacts: 'result.html'
             }
         }
-        stage('Print the Date') {
+        stage('Print Date') {
             steps {
                 sh 'date'
             }
