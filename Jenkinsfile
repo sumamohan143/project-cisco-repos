@@ -33,13 +33,16 @@ pipeline {
                 '''
             }
         }
-        stage('Verify Branch Name')
+        stage('Verify Branch Name'){
            steps{
                sh '''
-                  if num=$number/2
-                     echo "print ${BRANCH_NAME}
-                  else
-                      echo "printing $num is odd"
+		  num=$Number
+                  if [$num % 2 == 0]; then
+    			echo "The branch name is ${BRANCH_NAME}"
+		  else 
+                        echo "The number $num is odd"
+                  fi
+                 '''
             }
         }
         stage('Publish HTML file') {
