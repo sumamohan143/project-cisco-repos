@@ -33,6 +33,15 @@ pipeline {
                 '''
             }
         }
+        stage('Verify Branch Name')
+           steps{
+               sh '''
+                  if num=$number/2
+                     echo "print ${BRANCH_NAME}
+                  else
+                      echo "printing $num is odd"
+            }
+        }
         stage('Publish HTML file') {
             steps {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '', reportFiles: 'result.html', reportName: 'Prime number result'])
