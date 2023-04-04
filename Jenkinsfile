@@ -43,7 +43,7 @@ pipeline {
     post {
      success {
        emailext (
-        subject: "Prime number result",
+        subject: "Prime number results",
         body: "Please find attached the prime number result.",
         attachmentsPattern: "result.html",
         to: "mohan.ram1806@gmail.com",
