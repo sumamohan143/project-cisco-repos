@@ -37,7 +37,7 @@ pipeline {
            steps{
                sh '''
 		  num=$Number
-                  if [$num % 2 == 0]; then
+                  if [ $((num%i)) -eq 0 ]; then
     			echo "The branch name is ${BRANCH_NAME}"
 		  else 
                         echo "The number $num is odd"
